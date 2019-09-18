@@ -10,6 +10,11 @@ describe DockingStation do
     expect(bike).to be_working
   end
 
+it 'docks a bike at a docking station' do
+  bike = Bike.new
+  expect(bike).to respond_to :dock
+end  
+
 end
 
 
