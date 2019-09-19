@@ -10,6 +10,7 @@ describe DockingStation do
     expect(bike).to be_working
   end
 
+
   it 'docks a bike' do
     expect(subject).to respond_to(:dock).with(1).argument
   end
@@ -23,10 +24,25 @@ describe DockingStation do
     expect(subject).to respond_to :bike
   end
 
-  it 'returns a docked bike' do
+  it 'read from an instance variable to return a docked bike' do
     bike = Bike.new
     subject.dock(bike)
     expect(subject.bike).to eq bike
   end
 
+
+  it 'does not release infinite bikes' do
+    bike = Bike.new
+    expect { subject.release_bike }.to raise_error "No bikes available"
+  end
+
+  it '#release_method reconfigured' do
+    bike = Bike.new
+    subject.dock(bike)
+    expect(subject.release_bike).to eq bike
+  end
+
 end
+
+# bike = Bike.new
+# subject.dock(bike)
