@@ -2,16 +2,14 @@ require_relative 'bike'
 
 class DockingStation
 
-  @docked_bikes = []
+  # @docked_bikes = []
 
   def release_bike
     Bike.new
-  end    
+  end
 
   def dock(bike)
+    @bike
   end
 
 end
-
-
-

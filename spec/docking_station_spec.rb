@@ -12,9 +12,7 @@ describe DockingStation do
 
 it 'docks a bike at a docking station' do
   bike = Bike.new
-  expect(bike).to respond_to :dock
-end  
-
+  expect(subject.dock(bike)).to respond_to :dock
 end
 
-
+end
