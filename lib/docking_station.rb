@@ -12,4 +12,7 @@ class DockingStation
     # @bike
   end
 
+  def bike
+  end
+
 end
