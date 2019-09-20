@@ -23,13 +23,13 @@ describe DockingStation do
   end
 
   it 'returns a bike' do
-    expect(subject).to respond_to :bike
+    expect(subject).to respond_to :bikes
   end
 
   it 'read from an instance variable to return a docked bike' do
     bike = Bike.new
     subject.dock(bike)
-    expect(subject.bike).to eq bike
+    expect(subject.bikes).to eq bike
   end
 
 
@@ -45,8 +45,7 @@ describe DockingStation do
   end
 
   it 'does not allow docking of more than 1 bike' do
-    bike = Bike.new
-    subject.dock(bike)
+    20.times { subject.dock(Bike.new) }
     expect { subject.dock(Bike.new) }.to raise_error "Dock full"
   end
 
