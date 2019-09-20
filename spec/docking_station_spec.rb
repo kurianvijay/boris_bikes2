@@ -45,8 +45,12 @@ describe DockingStation do
   end
 
   it 'does not allow docking of more than 1 bike' do
-    20.times { subject.dock(Bike.new) }
+    DockingStation::DEFAULT_CAPACITY.times { subject.dock(Bike.new) }
     expect { subject.dock(Bike.new) }.to raise_error "Dock full"
+  end
+
+  it 'it sets instance variable @capacity when DS.new called' do
+    expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
   end
 
 end
