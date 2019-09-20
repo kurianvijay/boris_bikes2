@@ -44,6 +44,12 @@ describe DockingStation do
     expect(subject.release_bike).to eq bike
   end
 
+  it 'does not allow docking of more than 1 bike' do
+    bike = Bike.new
+    subject.dock(bike)
+    expect { subject.dock(Bike.new) }.to raise_error "Dock full"
+  end
+
 end
 
 # bike = Bike.new

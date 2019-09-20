@@ -38,3 +38,10 @@ I want to see a bike that has been docked
 OBJECT | MESSAGE(Methods)
 bike
 docking station | bike_docked?
+
+c13 - As a maintainer of the system,
+So that I can control the distribution of bikes,
+I'd like docking stations not to accept more bikes than their capacity.
+
+OBJECT | MESSAGE(Methods)
+docking_station |  --> station full if over capacity

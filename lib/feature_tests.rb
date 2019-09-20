@@ -8,4 +8,7 @@ bike = Bike.new
 
 #station.release_bike(bike)
 
-station.release_bike
+# station.release_bike
+
+station.dock(bike)
+station.dock(bike)
