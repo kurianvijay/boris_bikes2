@@ -44,7 +44,7 @@ describe DockingStation do
     expect(subject.release_bike).to eq bike
   end
 
-  it 'does not allow docking of more than 1 bike' do
+  it 'does not allow docking when DEFAULT_CAPACITY is reached' do
     DockingStation::DEFAULT_CAPACITY.times { subject.dock(Bike.new) }
     expect { subject.dock(Bike.new) }.to raise_error "Dock full"
   end
