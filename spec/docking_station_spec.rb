@@ -19,18 +19,18 @@ describe DockingStation do
 
   it 'docks a bike and stores it' do
     bike = Bike.new
-    expect(subject.dock(bike)).to eq bike
+    expect(subject.dock(bike)).to eq(subject.bikes)
   end
 
   it 'returns a bike' do
     expect(subject).to respond_to :bikes
   end
 
-  it 'read from an instance variable to return a docked bike' do
-    bike = Bike.new
-    subject.dock(bike)
-    expect(subject.bikes).to eq bike
-  end
+  # it 'read from an instance variable to return a docked bike' do
+  #   bike = Bike.new
+  #   subject.dock(bike)
+  #   expect(subject.bikes).to eq bike
+  # end
 
 
   it 'does not release infinite bikes' do
